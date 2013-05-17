@@ -24,7 +24,7 @@
         {/if}
     {/if}
     {loop="links"}
-    <div{if="$value.class"} class="center {$value.class}"{/if}>
+    <div{if="$value.class"} class="{$value.class}"{/if}>
             <a name="{$value.linkdate|smallHash}" id="{$value.linkdate|smallHash}"></a>
             <div class="linkcontainer">
             {if="isLoggedIn()"}

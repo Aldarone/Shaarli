@@ -586,14 +586,22 @@ textarea {
 /* ==main */
 /* ----------------------------- */
 
-#linklist > * {
-    float: left;
+#linklist > *,
+#addlink,
+#editlinkform,
+#toolsdiv,
+#changepassform,
+#configureform,
+#changetagform,
+#uploaddiv {
     background: #fff;
     padding: 0.75em 1em 0.5em;
     margin-bottom: 2em;
     border-radius: 2px;
     border: 1px solid #d8d8d8;
 }
+
+#linklist > * { float: left; }
 
 .linktitle {
     margin: 0;
@@ -619,6 +627,11 @@ textarea {
     background: -ms-linear-gradient(left,  #ffffff 0%,#e5e5e5 50%,#ffffff 100%); /* IE10+ */
     background: linear-gradient(to right,  #ffffff 0%,#e5e5e5 50%,#ffffff 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+}
+
+.picwall_pictureframe {
+    float: left;
+    margin-bottom: 1em;
 }
 
 /* ----------------------------- */

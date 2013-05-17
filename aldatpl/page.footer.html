@@ -1,4 +1,4 @@
-<div id="footer" class="pts pbm txtcenter">
+<div id="footer" class="pts pbm mts txtcenter">
         <b><a href="http://sebsauvage.net/wiki/doku.php?id=php:shaarli">Shaarli {$version|htmlspecialchars}</a></b> - The personal, minimalist, super-fast, no-database delicious clone. By <a href="http://sebsauvage.net" target="_blank">sebsauvage.net</a>. Theme by <a href="http://aldarone.fr" target="_blank">Alda Marteau-Hardi</a>.
 </div>
 {if="$newversion"}
@@ -33,18 +33,23 @@ $(document).ready(function()
 $(document).ready(function()
 {
 
-    $mySelector = $('#linklist');
+function do_masonry ( $mySelector, $columnNumber, $gutter)
+{
 
-    $gutter = 14;
-    $boxwidth = $mySelector.width() / 3 - $gutter;
-
+    $boxwidth = $mySelector.width() / $columnNumber - $gutter;
     if ( $mySelector.width() != 960 ) { $boxwidth = 960 };
 
     $mySelector.children().width($boxwidth);
 
-    $('#linklist').masonry({
-        itemSelector: '#linklist > *',
+    $mySelector.masonry({
+        itemSelector: $mySelector.children(),
         columnWidth: $boxwidth + $gutter
     });
+
+};
+
+do_masonry( $('#linklist'), 3, 14 );
+do_masonry( $('#picwall'), 7, 5);
+
 });
 </script>
