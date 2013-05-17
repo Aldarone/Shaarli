@@ -593,7 +593,8 @@ textarea {
 #changepassform,
 #configureform,
 #changetagform,
-#uploaddiv {
+#uploaddiv,
+#loginform {
     background: #fff;
     padding: 0.75em 1em 0.5em;
     margin-bottom: 2em;

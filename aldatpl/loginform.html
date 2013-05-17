@@ -2,10 +2,11 @@
 <html>
 <head>{include="includes"}</head>
 <body{if="ban_canLogin()"} onload="document.loginform.login.focus();"{/if}>
-<div id="pageheader">
+<div id="pageheader" class="w100">
 	{include="page.header"}
+</div>
 
-	<div id="headerform">
+    <div id="loginform" class="mw960p center mtl">
 {if="!ban_canLogin()"}
     You have been banned from login after too many failed attempts. Try later.
 {else}
@@ -19,7 +20,6 @@
     </form>
 {/if}
     </div>
-</div>
 
 {include="page.footer"}
 </body>
