@@ -15,7 +15,8 @@ date_default_timezone_set('UTC');
 $GLOBALS['config']['DATADIR'] = 'data'; // Data subdirectory
 $GLOBALS['config']['CONFIG_FILE'] = $GLOBALS['config']['DATADIR'].'/config.php'; // Configuration file (user login/password)
 $GLOBALS['config']['DATASTORE'] = $GLOBALS['config']['DATADIR'].'/datastore.php'; // Data storage file.
-$GLOBALS['config']['LINKS_PER_PAGE'] = 20; // Default links per page.
+$GLOBALS['config']['RAINTPL_TEMPLATE_DIR'] = 'tpl/'; // Directory of the template to use to render the pages. Change it to use a custom template.
+$GLOBALS['config']['LINKS_PER_PAGE'] = 9; // Default links per page.
 $GLOBALS['config']['IPBANS_FILENAME'] = $GLOBALS['config']['DATADIR'].'/ipbans.php'; // File storage for failures and bans.
 $GLOBALS['config']['BAN_AFTER'] = 4;        // Ban IP after this many failures.
 $GLOBALS['config']['BAN_DURATION'] = 1800;  // Ban duration for IP address after login failures (in seconds) (1800 sec. = 30 minutes)
@@ -61,7 +62,7 @@ error_reporting(E_ALL^E_WARNING);  // See all error except warnings.
 //error_reporting(-1); // See all errors (for debugging only)
 
 include "inc/rain.tpl.class.php"; //include Rain TPL
-raintpl::$tpl_dir = "tpl/"; // template directory
+raintpl::$tpl_dir = $GLOBALS['config']['RAINTPL_TEMPLATE_DIR']; // template directory
 if (!is_dir('tmp')) { mkdir('tmp',0705); chmod('tmp',0705); }
 raintpl::$cache_dir = "tmp/"; // cache directory
 
