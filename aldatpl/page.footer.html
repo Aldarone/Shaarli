@@ -12,7 +12,7 @@
 <script language="JavaScript">
 $(document).ready(function()
 {
-    $('#lf_tags').autocomplete({source:'{$source}?ws=tags',minLength:1});
+    $('#lf_tags').autocomplete({source:'{$source}?ws=tags',minLength:1,appendTo:'#editlinkform'});
     $('#searchtags').autocomplete({source:'{$source}?ws=tags',minLength:1});
     $('#fromtag').autocomplete({source:'{$source}?ws=singletag',minLength:1});
 });

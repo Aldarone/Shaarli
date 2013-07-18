@@ -516,13 +516,9 @@ a { color: #427fed; }
 /* ==header */
 /* ----------------------------- */
 
-body { padding: 94px 0 0; }
-
 #pageheader {
-    position: fixed; top: 0;
     background: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-    z-index: 42;
 }
 
 #pageheader a { color: inherit; text-decoration: none; }
@@ -634,6 +630,10 @@ textarea {
     float: left;
     margin-bottom: 1em;
 }
+
+/* Minimal customisation for jQuery widgets */
+.ui-autocomplete { background-color:#fff; list-style-type: none; padding: 0; }
+.ui-state-hover { background-color: #604dff; color:#fff; }
 
 /* ----------------------------- */
 /* ==iefix */
