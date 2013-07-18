@@ -278,10 +278,15 @@ function pubsubhub()
     {
        $p = new Publisher($GLOBALS['config']['PUBSUBHUB_URL']);
        $topic_url = array (
-                       indexUrl().'?do=atom',
-                       indexUrl().'?do=rss'
+                       indexUrl().'?do=rss',
+                       indexUrl().'?do=atom&searchtags=t&permalinks',
+                       indexUrl().'?do=rss&searchtags=t&permalinks',
+                       indexUrl().'?do=atom'
                     );
-       $p->publish_update($topic_url);
+       $response = $p->publish_update($topic_url);
+       logm(print_r($response, true));
+       logm(print_r($topic_url, true));
+       logm(print_r($p->last_response(), true));
     }
 }
 
@@ -908,7 +913,7 @@ function showRSS()
     {
         echo '<!-- PubSubHubbub Discovery -->';
         echo '<link rel="hub" href="'.htmlspecialchars($GLOBALS['config']['PUBSUBHUB_URL']).'" xmlns="http://www.w3.org/2005/Atom" />';
-        echo '<link rel="self" href="'.htmlspecialchars($pageaddr).'?do=rss" xmlns="http://www.w3.org/2005/Atom" />';
+        echo '<link rel="self" href="'.htmlspecialchars(serverUrl().$_SERVER["REQUEST_URI"]).'" xmlns="http://www.w3.org/2005/Atom" />';
         echo '<!-- End Of PubSubHubbub Discovery -->';
     }
     $i=0;
