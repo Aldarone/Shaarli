@@ -3,6 +3,8 @@ data
 tmp
 cache
 pagecache
+*/.sass-cache
+
 
 # Eclipse project files
 .settings

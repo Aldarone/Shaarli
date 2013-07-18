@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>{include="includes"}
+
+</head>
+<body>
+<div id="pageheader" class="w100">{include="page.header"}</div>
+<div id="picwall" class="picwall_container mw960p center mtl line">
+    {loop="linksToDisplay"}
+    <div class="picwall_pictureframe">
+	    {$value.url|thumbnail}{ignore}<a href="{$value.permalink}"><span class="info">{$value.title|htmlspecialchars}</span></a>{/ignore}
+    </div>
+    {/loop}
+</div>
+{include="page.footer"}
+
+
+</body>
+</html>
